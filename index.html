@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#b32025">
+  <title>EventRisk Kempen - risicoanalyse evenementen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brandmark" aria-hidden="true">ER</span><div><strong>EventRisk Kempen</strong><span>Risicoanalyse evenementen</span></div></div>
+    <button class="ghost" id="resetBtn" type="button">Nieuwe analyse</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div><span class="eyebrow">PROTOCOLAKKOORD ZONALE AANPAK EVENEMENTEN</span><h1>Van evenementgegevens naar een onderbouwd risiconiveau.</h1><p>Vul de kenmerken in. De toepassing berekent automatisch de scores voor D1, D2 en D3, bepaalt het algemene risiconiveau en bundelt de minimale maatregelen en sneladviezen.</p></div>
+      <aside class="notice"><strong>Beslissingsondersteuning</strong><p>Het resultaat is een sneladvies. De bevoegde gemeente, burgemeester en disciplines kunnen strengere maatregelen opleggen.</p></aside>
+    </section>
+
+    <div class="workspace">
+      <form id="riskForm" class="form-card" novalidate>
+        <div class="section-heading"><span>1</span><div><h2>Evenement</h2><p>Basisgegevens voor het dossier</p></div></div>
+        <div class="grid two">
+          <label>Naam evenement<input name="eventName" required placeholder="Bijv. Zomerfestival Kempen"></label>
+          <label>Gemeente<select name="municipality" required><option value="">Kies gemeente</option></select></label>
+          <label>Startdatum<input name="startDate" type="date" required></label>
+          <label>Verwacht aantal aanwezigen<input name="attendance" type="number" min="0" step="1" required placeholder="0"></label>
+          <label class="wide">Locatie / adres<input name="address" placeholder="Straat, nummer en plaats"></label>
+        </div>
+
+        <div class="section-heading"><span>2</span><div><h2>Risicoparameters</h2><p>Weging conform bijlage 1</p></div></div>
+        <div id="parameterFields" class="grid two"></div>
+
+        <div class="section-heading"><span>3</span><div><h2>Bijkomende risicofactoren</h2><p>Niet in de score, wel in het sneladvies</p></div></div>
+        <div id="extraFields" class="checks"></div>
+        <label id="otherWrap" class="hidden">Andere risicofactor<input name="otherRisk" placeholder="Omschrijf het bijkomende risico"></label>
+
+        <div class="actions"><button class="primary" type="submit">Bereken risiconiveau</button><button class="secondary" id="saveDraftBtn" type="button">Concept bewaren</button></div>
+      </form>
+
+      <aside class="result-card" id="resultPanel" aria-live="polite">
+        <div class="empty-result" id="emptyResult"><div class="shield">✓</div><h2>Klaar voor analyse</h2><p>Vul alle verplichte velden in en bereken het risiconiveau.</p></div>
+        <div class="hidden" id="resultContent">
+          <div class="result-top"><div><span class="eyebrow">ALGEMEEN RESULTAAT</span><h2 id="resultTitle"></h2><p id="resultSummary"></p></div><div class="risk-badge" id="riskBadge"><small>RN</small><strong id="riskNumber"></strong></div></div>
+          <div class="discipline-grid" id="disciplineScores"></div>
+          <section><h3>Minimale maatregelen</h3><ul class="advice-list" id="measures"></ul></section>
+          <section><h3>Sneladviezen</h3><ul class="advice-list" id="quickAdvice"></ul></section>
+          <section class="deadline-box"><h3>Termijnen</h3><ul id="deadlines"></ul></section>
+          <details><summary>Berekening en aannames</summary><div id="calculation"></div></details>
+          <div class="result-actions"><button class="primary" id="printBtn" type="button">Afdrukken / PDF</button><button class="secondary" id="exportBtn" type="button">Exporteer JSON</button></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer>EventRisk Kempen · protocolgestuurde beslissingsondersteuning · gegevens blijven lokaal in deze browser</footer>
+  <script src="risk-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
