@@ -9,7 +9,7 @@ window.RISK_CONFIG = {
       {label:"Fuif / dancefestival",scores:[.33,0,.33]},{label:"Optreden / muziekfestival",scores:[0,0,0],review:true},{label:"Sportwedstrijd (recreatief)",scores:[0,.33,0]},{label:"Sportwedstrijd (competitief)",scores:[0,.66,.33]},{label:"Familiaal / recreatief",scores:[0,0,0]},{label:"Kermis / markt / stoet",scores:[0,0,0]},{label:"Doortocht",scores:[-1,-1,-1]},{label:"Circus",scores:[0,0,0]},{label:"Vliegshow",scores:[1,1,1]},{label:"Foodtruckfestival",scores:[.33,0,0],review:true},{label:"Privé",scores:[-4,-4,-4]}
     ]},
     {id:"catering",label:"Catering",options:[
-      {label:"Geen",scores:[0,0,0]},{label:"Eigen catering - koud",scores:[0,.33,0]},{label:"Eigen catering - warm",scores:[.33,.33,0]},{label:"Externe professionele catering - warm",scores:[0,0,0]}
+      {label:"Geen",scores:[0,0,0]},{label:"Koud",scores:[0,.33,0]},{label:"Warm",scores:[.33,.33,0]},{label:"Extern - koud",scores:[0,.33,0]},{label:"Extern - warm",scores:[.33,.33,0]}
     ]},
     {id:"security",label:"Security",options:[
       {label:"Geen",scores:[0,0,0]},{label:"Eigen leden",scores:[0,0,.33]},{label:"Extern professioneel",scores:[-.33,0,.33],review:true}

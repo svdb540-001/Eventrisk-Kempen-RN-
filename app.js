@@ -28,7 +28,7 @@
     if(generalLevel===2&&(loc.kind==="outdoor"||loc.kind==="tent"||loc.kind==="largeTent")) advice.push("Dien een inplantingsplan in.");
     if(loc.kind==="improper") advice.push("Vraag brandweeradvies voor het oneigenlijk gebruik van het lokaal.");
     if(loc.kind==="largeTent") advice.push("Laat de grote tent controleren door de brandweer.");
-    if(catering.label.includes("Eigen catering - warm")) advice.push("Volg het sneladvies voor barbecue, vuurkorven en warme catering.");
+    if(catering.label.includes("Warm")||catering.label.includes("warm")) advice.push("Volg het sneladvies voor warme catering, barbecue en vuurkorven indien van toepassing.");
     if(sec.label==="Eigen leden") advice.push("Bezorg de namen van alle leden met securitytaken aan de lokale politie.");
     if(disciplineScores[0]>2) advice.push("Vraag specifiek brandweeradvies (D1).");
     if(disciplineScores[1]>1) advice.push("Voorzie een EHBO-koffer.");

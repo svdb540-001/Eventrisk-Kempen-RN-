@@ -12,6 +12,8 @@ Statische webapp voor een multidisciplinaire risicoanalyse van evenementen op ba
 - concept lokaal bewaren, JSON-export en afdruk/PDF;
 - geen server of databank nodig; geschikt voor GitHub Pages.
 
+De cateringkeuzes volgen de aangeleverde Excelberekening: koud telt `0 / +0,33 / 0` voor D1/D2/D3 en warm telt `+0,33 / +0,33 / 0`. Extern voegt op zichzelf geen extra gewicht toe; bij extern-warm blijft de warmtescore gelden.
+
 ## Lokaal starten
 
 Open `index.html` rechtstreeks of gebruik:

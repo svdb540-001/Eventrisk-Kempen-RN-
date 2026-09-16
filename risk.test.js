@@ -8,4 +8,7 @@ assert.deepStrictEqual([99,100,499,500,2000,2001,5000,5001,20000,20001].map(atte
 assert.deepStrictEqual([-.2,0,.01,1,1.01,4.9,6].map(levelFromScore),[0,0,1,1,2,5,5]);
 assert.strictEqual(C.parameters.length,9);
 assert.strictEqual(C.levels.length,6);
+const catering=C.parameters.find(p=>p.id==='catering');
+assert.strictEqual(catering.options.some(o=>o.label.includes('Eigen')),false);
+assert.deepStrictEqual(Array.from(catering.options.find(o=>o.label==='Extern - warm').scores),[.33,.33,0]);
 console.log('Alle risicologica-tests geslaagd.');
